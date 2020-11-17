@@ -1,0 +1,78 @@
+syntax on
+set foldmethod=syntax " fold based on indent
+set foldnestmax=10 " deepest fold is 10 levels
+set nofoldenable " don't fold by default
+set foldlevel=1
+set number
+set rnu
+set incsearch
+set wildmenu
+set hlsearch
+set ignorecase " case insensitive searching
+set smartcase " case-sensitive if expresson contains a capital letter
+set autoindent " automatically set indent of new line
+set smartindent
+set splitbelow
+set splitright
+set laststatus=2 " show the satus line all the time
+" Display extra whitespace and tabs as characters, but not by default
+set list
+set listchars=tab:\ \ ,trail:·,nbsp:·
+"set nowrap       "Don't wrap lines
+"set linebreak    "Wrap lines at convenient points
+
+
+call plug#begin('~/.vim/plugged')
+	Plug 'lervag/vimtex'
+	Plug 'sirver/ultisnips'| Plug 'honza/vim-snippets'
+call plug#end()
+
+set conceallevel=1
+let g:tex_conceal='abdmg'
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-tab>'
+
+augroup remember_fold
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
+
+"executes the command on quit for texfiles.
+augroup autocom
+    autocmd!
+     autocmd VimLeave *.tex !~/scripts/texclear.sh %
+augroup END
+
+autocmd FileType tex map <Leader>c :!pdflatex % <CR><CR>
+autocmd FileType tex map <Leader>o :!zathura %:r.pdf & <CR><CR>
+autocmd FileType tex map <Leader>C :!pdflatex % && bibtex %:r.aux && pdflatex % <CR><CR>
+autocmd FileType markdown map <Leader>o :!zathura %.pdf & <CR><CR>
+autocmd FileType markdown map <Leader>c :!~/scripts/pandoc.sh % %.pdf  <CR><CR>
+autocmd FileType markdown map <Leader>b :!pandoc % -t beamer -V theme:CambridgeUS -o %.pdf <CR><CR>
+autocmd FileType gaps map <Leader>c :!gnome-terminal -e "gap %"<CR><CR>
+autocmd FileType sh map <Leader>c :!./% <CR>
+
+vnoremap <C-c> "+y
+map <C-p> "+P
+map <Leader>s :setlocal spell! spelllang=en_us <CR><CR>
+map <Leader>n :setlocal nonumber! <CR><CR>
+map <Leader>f :read !figlet
+map <Leader>r :%s/\s\+$//e <CR><CR>
+map <Leader>d :filetype detect <CR><CR>
+"map <Leader>r :/\s\+$ <CR><CR>
+map <tab><space> <Esc> /<++><Enter>"_c4l
+nnoremap <Space> @q
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+
+"map <Leader>r :setlocal rnu! <CR><CR>
+"vnoremap <tab><space> <Esc> /<++><Enter>"_c4l
+"inoremap <tab><space> <Esc> /<++><Enter>"_c4l
+"highlight ExtraWhitespace ctermbg=yellow guibg=yellow
+"match ExtraWhitespace /\s\+$/
+
+"helpers for dealing with other people's code
+"nmap \t :set ts=4 sts=4 sw=4 noet<cr>
+"nmap \s :set ts=4 sts=4 sw=4 et<cr>
