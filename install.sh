@@ -1,6 +1,7 @@
 #!/bin/bash
 #Place the Dotfiles folder on your home directory.
 #Run the script.
+#Disclaimer: This might not work in your system. So, the best way is to use copy paste if you are planning to clone it.
 
 ln -s ~/Dotfiles/vim/vimrc ~/.vimrc #for vim
 
@@ -14,3 +15,4 @@ ln -s ~/Dotfiles/bash/bashrc ~/.bashrc #For bash
 ln -s ~/Dotfiles/sxiv/key-handler ~/.config/sxiv/exec/key-handler #For sxiv
 
 ln -s ~/Dotfiles/zathura/zathurarc ~/.config/zathura/zathurarc #For zathura
+
