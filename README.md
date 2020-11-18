@@ -18,4 +18,4 @@ Here's my list of dotfiles which I collected from different sources.
 
 I have made a [shell script](install.sh) for the placement of the dotfiles to there respective paths as symbolic links. But, this need not work in your setup.
 
-![](kopimi-sm.png)
+![](kopimi-sm.png =250x)
