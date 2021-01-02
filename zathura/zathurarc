@@ -14,3 +14,4 @@ map i recolor
 map p print
 
 map <C-o> feedkeys ":exec pdfshuffler $FILE<Return>"
+map <C-n> feedkeys ":exec zathura $FILE<Return>"

@@ -215,6 +215,7 @@ dir_node_exact_matches = {
     'Templates'                        : '',
     'Videos'                           : '',
     'Archive'                           :'',
+    'Youtube'                           :'',
 }
 
 file_node_exact_matches = {

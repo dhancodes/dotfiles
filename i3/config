@@ -94,12 +94,12 @@ bindsym $mod+a focus parent
 
 set $workspace1 "1:"
 set $workspace2 "2:"
-set $workspace3 "3:"
-set $workspace4 "4: "
-set $workspace5 "5: "
+set $workspace3 "3: "
+set $workspace4 "4: "
+set $workspace5 "5: "
 set $workspace6 "6: "
-set $workspace7 "7:"
-set $workspace8 "8:"
+set $workspace7 "7:"
+set $workspace8 "8:"
 set $workspace9 "9:"
 set $workspace0 "10:"
 # switch to workspace
@@ -129,6 +129,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace0
 assign [class="Firefox"] $workspace1
 assign [class="TelegramDesktop"] $workspace0
 assign [class="Pcmanfm"] $workspace9
+assign [class="zoom"] $workspace4
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
