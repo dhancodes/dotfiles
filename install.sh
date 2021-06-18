@@ -1,7 +1,7 @@
 #!/bin/bash
 #Place the Dotfiles folder on your home directory.
 #Run the script.
-#Disclaimer: This might not work in your system. So, the best way is to use copy paste if you are planning to clone it.
+#Disclaimer: This might not work in your system. So, the best way is to use copy paste if you are planning to clone it..
 
 ln -s ~/Dotfiles/vim/vimrc ~/.vimrc #for vim
 
