@@ -79,14 +79,14 @@ syn match  gapSublist	"[}{]"
 " gvim (see below for an alternative to link the layout to predefined
 " values, see `:highlight` for an overview of defined names).
 hi gapString ctermfg=5 guifg=Green
-hi gapFunction  cterm=bold ctermfg=6 guifg=Yellow
+hi gapFunction  cterm=bold ctermfg=6 guifg=DarkBlue
 hi gapDeclare  cterm=bold ctermfg=4 guifg=DarkBlue
 hi gapMethsel  ctermfg=6 guifg=Cyan
 hi gapOtherKey  ctermfg=3 guifg=Yellow
 hi gapOperator cterm=bold ctermfg=5 guifg=DarkGray
 hi gapConditional cterm=bold ctermfg=9 guifg=DarkRed
 hi gapRepeat cterm=bold ctermfg=12 guifg=DarkGray
-hi gapComment  ctermfg=14 guifg=LightBlue
+hi gapComment  ctermfg=14 guifg=Grey
 hi gapTodo  ctermbg=11 ctermfg=8 guibg=Green guifg=Black
 hi link gapTTodoComment  gapTodo 
 hi link gapTodoComment	gapComment

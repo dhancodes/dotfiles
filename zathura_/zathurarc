@@ -1,0 +1,24 @@
+set sandbox none
+set statusbar-h-padding 0
+set statusbar-v-padding 1
+set page-padding 1
+set selection-clipboard clipboard
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map r reload
+map R rotate
+map K zoom in
+map J zoom out
+map i recolor
+map <C-p> print
+
+map <C-o> feedkeys ":exec pdfshuffler $FILE<Return>"
+map <C-n> feedkeys ":exec zathura $FILE<Return>"
+map <C-e> feedkeys ":exec evince $FILE<Return>"
+map <C-x> feedkeys ":exec xournalpp $FILE<Return>"
+map <C-/> feedkeys ":exec /home/akshay/scripts/booksplit.sh $FILE twopages<Return>"
+map <C-1> feedkeys ":exec /home/akshay/scripts/booksplit.sh $FILE<Return>"
+map p feedkeys ":exec pdfjam $FILE "
+map <C-2> feedkeys ":exec pdfnup --nup 2x1 --suffix 2x1 $FILE<Return>"
+map <C-4> feedkeys ":exec pdfnup --no-landscape --nup 2x2 --suffix 2x2 $FILE<Return>"

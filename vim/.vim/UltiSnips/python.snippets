@@ -1,0 +1,45 @@
+snippet fori "for" wA
+for i in range($1):
+	$2
+endsnippet
+
+snippet im "import" w
+
+import numpy as np
+import sympy as sy
+
+x,y$1 =sy.symbols('x y$2')
+
+$3
+endsnippet
+
+snippet sr "^2" iA
+**2
+endsnippet
+
+snippet cb "^3" iA
+**3
+endsnippet
+
+snippet td "superscript" iA
+**$1  
+endsnippet
+
+snippet def "Definitiom" wA
+def $1($2):
+	$3
+endsnippet
+
+snippet iff "If and else" wA
+if $1:
+	$2
+else:
+	$3
+endsnippet
+
+snippet arr "Array" w
+Array([[$1],[$2]$3])$4
+endsnippet
+
+
+

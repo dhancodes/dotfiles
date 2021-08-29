@@ -195,8 +195,10 @@ file_node_extensions = {
     'zip'      : '',
     'zsh'      : '',
     'djvu'     :'',
+    'ps'     :'',
     'pdf'      : '',
     'g'         : '',
+    'gpg'         : '',
 }
 
 dir_node_exact_matches = {
@@ -208,6 +210,7 @@ dir_node_exact_matches = {
     'Downloads'                        : '',
     'Dotfiles'                         : '',
     'Dropbox'                          : '',
+    'scripts'     : '',
     'Music'                            : '',
     'Audio'                            : '',
     'Pictures'                         : '',
@@ -216,6 +219,9 @@ dir_node_exact_matches = {
     'Videos'                           : '',
     'Archive'                           :'',
     'Youtube'                           :'',
+    'backup'                           :'',
+    'media'                           :'',
+
 }
 
 file_node_exact_matches = {

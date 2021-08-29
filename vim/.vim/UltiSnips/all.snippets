@@ -1,0 +1,13 @@
+global !p
+from vimsnippets import get_comment_format
+endglobal
+
+snippet ll "A nice box over the full width" b
+`!p
+b, m, e, i = (s.strip() for s in get_comment_format())
+width = 20
+snip.rv =  i + m + "-" * width + " "
+`${1:${VISUAL:comment}}`!p
+snip.rv = " " + "-" * width`
+$0
+endsnippet

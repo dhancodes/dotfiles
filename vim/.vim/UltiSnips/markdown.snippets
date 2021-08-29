@@ -1,0 +1,54 @@
+snippet tem "Page title" w
+---
+title: $1
+author: $2
+date: `!v strftime("%d %b,%Y")`
+---
+endsnippet
+
+snippet mk "Math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$2
+endsnippet
+
+snippet sr "^2" iA
+^2
+endsnippet
+
+snippet td "superscript" iA
+^{$1}$0
+endsnippet
+
+snippet // "Fraction" iA
+\\frac{$1}{$2}$0
+endsnippet
+
+snippet il "Inline code" wA
+\`$1\`$0
+endsnippet
+
+snippet head "For gitpages pages" w
+---
+layout: archive
+excerpt: /${1: Title}/
+permalink: "${1/ /-/g}"
+author_profile: true
+toc: true
+---
+endsnippet
+
+	
+snippet head "For gitpages posts" w
+---
+title:${1: Title}
+date: `!v strftime("%Y-%m-%d")`
+permalink: /posts/`!v strftime("%Y/%m/%d")`/${1/ /_/g}/
+tags:
+  - $2
+toc: true
+---
+endsnippet

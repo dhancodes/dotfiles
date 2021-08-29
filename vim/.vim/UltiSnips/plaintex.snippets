@@ -1,0 +1,40 @@
+snippet tem "beamer"
+%xelatex
+\input{preamble/slides.tex}
+\usecolortheme{lily} %lily, spruce, wolverine, monarca, sidebartab,dove,seagull
+
+\title{<+Title+>}
+%\titlegraphic{\hfill\includegraphics[height=1.5cm]{Images/logo.png}}
+\date{\today}
+
+\begin{document}
+%-------------------------------------------------------------
+\frame{\titlepage}
+%-------------------------------------------------------------
+\begin{frame}{}
+
+\end{frame}
+%-------------------------------------------------------------
+\begin{frame}{}
+\bibliography{refer}
+\bibliographystyle{unsrt}
+\end{frame}
+%-------------------------------------------------------------
+\end{document}
+endsnippet
+
+snippet tem "article"
+\documentclass[a4paper,12pt]{article}
+\input{preamble/article.tex}
+
+\title{<+Title+>}
+\date{\today}
+
+\begin{document}
+%-------------------------------------------------------------
+
+%-------------------------------------------------------------
+\end{document}
+	
+endsnippet
+

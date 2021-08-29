@@ -92,17 +92,18 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1:"
-set $workspace2 "2:"
+set $workspace1 "1:"
+set $workspace2 "2:"
 set $workspace3 "3: "
 set $workspace4 "4: "
 set $workspace5 "5: "
-set $workspace6 "6: "
-set $workspace7 "7:"
-set $workspace8 "8:"
-set $workspace9 "9:"
+set $workspace6 "6:"
+set $workspace7 "7:"
+set $workspace8 "8:"
+set $workspace9 "9: "
 set $workspace0 "10:"
 # switch to workspace
+#
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
@@ -113,6 +114,19 @@ bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace0
+
+workspace $workspace1 output eDP-1
+workspace $workspace2 output eDP-1
+workspace $workspace3 output eDP-1
+workspace $workspace4 output eDP-1
+workspace $workspace5 output eDP-1
+workspace $workspace6 output DP-1
+workspace $workspace7 output DP-1
+workspace $workspace8 output DP-1
+workspace $workspace9 output DP-1
+workspace $workspace0 output DP-1
+
+# run "xrandr --listmonitors" to find the monitor name.
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -126,9 +140,10 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace0
 
-assign [class="Firefox"] $workspace1
-assign [class="TelegramDesktop"] $workspace0
-assign [class="Pcmanfm"] $workspace9
+#assign [class="Firefox"] $workspace2
+assign [class="Telegram"] $workspace0
+assign [class="Signal"] $workspace0
+#assign [class="Pcmanfm"] $workspace9
 assign [class="zoom"] $workspace4
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -170,14 +185,14 @@ bar {
 }
 
 #------------- my add -------------------
-
 #Always on
 exec_always --no-startup-id ~/.dropbox-dist/dropboxd 
 #exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id xmodmap -e "clear lock" #disable caps lock switch
-exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
-exec_always --no-startup-id compton 
+exec_always --no-startup-id xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
+exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+exec_always --no-startup-id compton
 
 # Pulse Audio controls
 bindsym $mod+F12 exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -191,15 +206,30 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
+
 #File Managers
 bindsym $mod+p exec --no-startup-id gnome-terminal -e "ranger"
 bindsym $mod+shift+p exec --no-startup-id pcmanfm
 
+#For a floating ranger
+#exec gnome-terminal -e "ranger"
+#exec --no-startup-id  "sleep 2; i3-msg '[class=Gnome-terminal] mark cajascratch, move scratchpad'"
+#bindsym $mod+shift+p [con_mark="^cajascratch$"] scratchpad show
+
+##file manager
+
 bindsym $mod+b exec --no-startup-id firefox
+bindsym $mod+Shift+s exec --no-startup-id signal-desktop
+bindsym $mod+m exec --no-startup-id ~/scripts/umount.sh
+
 bindsym $mod+shift+b exec --no-startup-id firefox -private-window
 bindsym $mod+shift+q exec --no-startup-id ~/scripts/prompt.sh "Do you want to shutdown?" "shutdown -h now"
-bindsym Print exec --no-startup-id ~/scripts/shortcut.sh
+bindsym $mod+Print exec --no-startup-id ~/scripts/shortcut.sh
+bindsym Print exec --no-startup-id ~/scripts/screenshot.sh
+bindsym F9 exec --no-startup-id ~/scripts/shortcut_mount.sh
 bindsym $mod+t exec --no-startup-id ~/Softwares/Telegram/Telegram
+bindsym $mod+shift+t exec --no-startup-id ferdi
+bindsym $mod+x exec --no-startup-id ~/scripts/shortcut_xournal.sh
 
 for_window [class="^.*"] border pixel 3
 bindsym $mod+u resize shrink width 10 px or 10 ppt

@@ -88,9 +88,10 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
+alias lh='ls -lisAd .[^.]*'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -122,6 +123,9 @@ set -o vi
 #My custom alias
 
 alias r='ranger'
+alias sr='sudo ranger'
+alias v='vim'
+alias sv='sudo vim'
 alias bc='bc -ql'
 alias sr='sudo ranger'
 alias install='sudo apt-get install'
@@ -137,10 +141,33 @@ alias dice='python $HOME/.charlie/dice.py|lolcat'
 alias sbright='sudo  brightnessctl s'
 alias emoji='cat emoji|grep'
 alias q='exit'
-alias md2pdf='$HOME/scripts/pandoc.sh'
 alias backup='$HOME/scripts/backup.sh'
 alias mkdir='mkdir -pv'
 alias path='echo -e ${PATH//:/\\n}'
 alias now='date +"%T"'
 alias ..='cd ..'
-alias gitup='git add --all && git commit -m '
+alias gup='git add --all && git commit -m "minor changes" && git push'
+alias g='git'
+alias myip='curl ipinfo.io/ip/'
+alias ytm='youtube-dl -x --audio-format mp3'
+alias yt='youtube-dl --format "best[height<=480]"'
+alias backup='~/scripts/backup.sh'
+alias rm='rm -v'
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias su='sudo -i'
+alias edit='vim'
+alias ff='firefox'
+alias jn='~/anaconda3/bin/jupyter-notebook'
+alias jn2py='~/anaconda3/bin/jupyter nbconvert --to script'
+alias slider='~/scripts/slider.sh'
+alias addbmk='~/scripts/addbookmark.sh'
+alias pdfname='~/scripts/pdfname.sh'
+
+wtfis(){
+	curl "cheat.sh/$1"
+}
+
+export VISUAL=vim;
+export EDITOR=vim;
+
