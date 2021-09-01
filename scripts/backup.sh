@@ -8,11 +8,13 @@
 # Just run the command with no commands to get an help page.
 
 backfolder="$HOME/Dropbox/backup"
+USBname="$HOME/Dropbox/backup"
+
 while getopts "hudaA:i:U:" o; do case "${o}" in
 	a) all=True ;;
 	A) archive=$OPTARG ;;
-	u) backfolder="/media/akshay/JULIETT" ;;
-	U) backfolder="/media/akshay/${OPTARGS}" ;;
+	u) backfolder="/media/${USER}/$USBname" ;;
+	U) backfolder="/media/${USER}/${OPTARGS}" ;;
 	i) path=$(readlink -f $OPTARG) ;;
 	*) echo "$(basename "$0") usage:
   -a  all important files
@@ -40,7 +42,7 @@ if [ $# -eq 0 ]; then
     echo "No arguments provided
 $(basename "$0") usage:
   -a  all important files
-  -u  backup to usb Juliett
+  -u  backup to usb
   -U  backup to custom filepath
   -i  backup file with same relative path"  && exit 1
 fi
